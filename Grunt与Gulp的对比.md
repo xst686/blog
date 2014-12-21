@@ -202,9 +202,9 @@ gulp.task('default', ['compass', 'browser-sync','normal'], function () {
 	gulp.watch(['./*.html','./css/{,*/}*.css','./js/{,*/}*.js','./images/{,*/}*.{png,jpg}'],['normal']);
 });
 ```
-> gulp的工作流程：文件流--文件流--文件流......因为grunt操作会创建临时文件，会有频繁的IO操作，而gulp使用的是流操作，一直是在内存中处理，直到输出结果。
-> 因此gulp在效率上确实远胜grunt，并且学习成本不高，在这非常感谢刘剑辛的分享！
-> 顺便做个推广：首届前端开发者年度大会 2015-01-17 广州华南农业大学举办，有兴趣的童鞋快来看看http://www.fequan.com/feday
+> gulp的工作流程：文件流--文件流--文件流......因为grunt操作会创建临时文件，会有频繁的IO操作，而gulp使用的是流操作，一直是在内存中处理，直到输出结果。 因此gulp在效率上确实远胜grunt，并且学习成本不高，在这非常感谢刘剑辛的分享！
+
+### 顺便做个推广：首届前端开发者年度大会 2015-01-17 广州华南农业大学举办，有兴趣的童鞋快来看看http://www.fequan.com/feday
 
 demo：https://github.com/Janking/blog
 如果要运行demo，先执行下面这些命令
