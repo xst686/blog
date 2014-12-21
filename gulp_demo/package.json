@@ -1,0 +1,23 @@
+{
+  "name": "gulp_demo",
+  "version": "1.0.0",
+  "description": "gulp demo",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Janking/blog"
+  },
+  "author": "Janking",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Janking/blog/issues"
+  },
+  "homepage": "https://github.com/Janking/blog",
+  "devDependencies": {
+    "browser-sync": "^1.8.1",
+    "gulp-compass": "^2.0.3"
+  }
+}

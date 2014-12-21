@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/print.css">
+    <style type="text/css">
+	.none{display: none;}
+    </style>
+</head>
+
+<body>
+	<div class="test"><button>click me</button><span class="msg"></span></div>
+	<div class="test"><button>click me</button><span class="msg"></span></div>
+	<div class="test"><button>click me</button><span class="msg"></span></div>
+    <script type="text/javascript">
+    $.extend({
+        tip: function(options) {
+
+            var param = $.extend({
+                obj: "#message",
+                text: '',
+                timeout: 3000,
+            }, options);
+
+            var obj = param.obj instanceof $ ? param.obj : $(param.obj);
+
+            var count = obj.data('count') || 1;
+
+
+            clearTimeout(obj.data('count'));
+
+            obj.html(param.text).removeClass('none');
+
+            obj.data('count',setTimeout(function() {
+
+                obj.addClass('none');
+
+            }, param.timeout));
+        }
+    });
+
+    $('button').eq(0).on('click', function(event) {
+    	var $this = $(this);
+    	//$.tip({obj:$this.next('span'),text:"显示信息，3秒后隐藏"});
+    	$this.next().html('via it !');
+    	if($this.data('count')){
+    		clearTimeout($this.data('count'));
+    	}
+    	var time = setTimeout(function(){$this.next().html('');console.log(time) },2000);
+    	$this.data('count',time);
+    });
+    
+    
+    
+    </script>
+</body>
+
+</html>
