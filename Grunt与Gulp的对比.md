@@ -28,8 +28,8 @@ npm install -g grunt-cli
 > 注意，安装grunt-cli并不等于安装了 Grunt！Grunt CLI的任务很简单：调用与Gruntfile在同一目录中
 > Grunt。这样带来的好处是，允许你在同一个系统上同时安装多个版本的 Grunt。
 
-1、在根目录下新建一份Gruntfile.js和package.json
-2、接着安装grunt和grunt插件，这个demo主要目标是做一个编译compass并自动刷新浏览器的demo，需要用到组件 :
+在根目录下新建一份Gruntfile.js和package.json
+接着安装grunt和grunt插件，这个demo主要目标是做一个编译compass并自动刷新浏览器的demo，需要用到组件 :
 
  - grunt
  - grunt-contrib-compass 
@@ -143,9 +143,6 @@ npm install gulp-compass browser-sync --save-dev
   "version": "1.0.0",
   "description": "gulp demo",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Janking/blog"
