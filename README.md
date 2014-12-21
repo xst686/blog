@@ -1,0 +1,4 @@
+blog
+====
+
+Janking's Blog
