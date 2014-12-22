@@ -14,16 +14,17 @@ Grunt VS Gulp
 grunt篇
 -------------
 新建一个grunt_demo 目录，用compass 创建一个项目
-
 ```shell
   mkdir grunt_demo
   cd grunt_demo
   compass init
 ```
+![stepOne](http://img.quan.mx/54982516a20a4251.gif)
 打开CMD，安装grunt-cli到全局环境
 ```
 npm install -g grunt-cli
 ```
+![stepTwo](http://img.quan.mx/5498279266f65587.gif)
 
 > 注意，安装grunt-cli并不等于安装了 Grunt！Grunt CLI的任务很简单：调用与Gruntfile在同一目录中
 > Grunt。这样带来的好处是，允许你在同一个系统上同时安装多个版本的 Grunt。
@@ -40,6 +41,7 @@ npm install -g grunt-cli
 ```shell
 npm install grunt grunt-contrib-compass grunt-contrib-watch grunt-browser-sync --save-dev
 ```
+![stepThree](http://img.quan.mx/5498279fb7689889.gif)
 安装好之后的package.json是这样的：
 ```json
 {
@@ -92,7 +94,7 @@ module.exports = function(grunt) {
                     options: {
                         watchTask: true, // < VERY important
                         server:{
-                        	baseDir: "./"
+                          baseDir: "./"
                         }
                     }
                 }
@@ -195,8 +197,8 @@ gulp.task('normal', function() {
 
 // 在命令行中运行 gulp，默认执行 default，你也可以自定义其他命令
 gulp.task('default', ['compass', 'browser-sync','normal'], function () {
-	gulp.watch(['./sass/{,*/}*.scss'], ['compass']);
-	gulp.watch(['./*.html','./css/{,*/}*.css','./js/{,*/}*.js','./images/{,*/}*.{png,jpg}'],['normal']);
+  gulp.watch(['./sass/{,*/}*.scss'], ['compass']);
+  gulp.watch(['./*.html','./css/{,*/}*.css','./js/{,*/}*.js','./images/{,*/}*.{png,jpg}'],['normal']);
 });
 ```
 > gulp的工作流程：文件流--文件流--文件流......因为grunt操作会创建临时文件，会有频繁的IO操作，而gulp使用的是流操作，一直是在内存中处理，直到输出结果。 因此gulp在效率上确实远胜grunt，并且学习成本不高，在这非常感谢刘剑辛的分享！

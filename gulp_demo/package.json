@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Janking/blog",
   "devDependencies": {
     "browser-sync": "^1.8.1",
+    "gulp": "^3.8.10",
     "gulp-compass": "^2.0.3"
   }
 }
