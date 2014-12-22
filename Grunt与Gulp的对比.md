@@ -120,6 +120,8 @@ module.exports = function(grunt) {
 
 > grunt的工作流程：读文件、修改文件、写文件、读文件、修改文件、写文件.....如果compass还要合并雪碧图的话，grunt的耗时就更长了，我试过最长需要2s，接下来我们试试gulp！
 
+![compare](http://img.quan.mx/54982a6d83498212.png)
+
 gulp篇
 -------------
 新建一个gulp_demo 目录，用compass 创建一个项目
@@ -203,6 +205,10 @@ gulp.task('default', ['compass', 'browser-sync','normal'], function () {
 ```
 > gulp的工作流程：文件流--文件流--文件流......因为grunt操作会创建临时文件，会有频繁的IO操作，而gulp使用的是流操作，一直是在内存中处理，直到输出结果。 因此gulp在效率上确实远胜grunt，并且学习成本不高，在这非常感谢刘剑辛的分享！
 
+运行结果
+-------------
+
+![result](http://img.quan.mx/54982a0851220867.png)![result](http://img.quan.mx/54982a19d3a21880.png)
 ### 顺便做个推广：首届前端开发者年度大会 2015-01-17 广州华南农业大学举办，有兴趣的童鞋快来看看http://www.fequan.com/feday
 
 demo：https://github.com/Janking/blog
