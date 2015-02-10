@@ -9,39 +9,93 @@
 
 <body>
     <div class="imgList">
-        <div class="imgItem"><a href=""><img src="test1.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test2.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test4.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test1.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test6.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test3.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test4.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test2.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test6.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test1.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test1.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test4.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test5.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test3.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test6.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test1.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test3.jpg" /></a></div>
-        <div class="imgItem"><a href=""><img src="test4.jpg" /></a></div>
+        <div class="imgItem">
+            <a href=""><img src="test1.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test2.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test4.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test1.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test6.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test3.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test4.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test2.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test6.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test1.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test1.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test4.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test5.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test3.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test6.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test1.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test3.jpg" />
+            </a>
+        </div>
+        <div class="imgItem">
+            <a href=""><img src="test4.jpg" />
+            </a>
+        </div>
     </div>
     <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
     <!--<script type="text/javascript" src="photo.js"></script>-->
 
     <script type="text/javascript">
-    function getWH(bool){
-    	var _arr = [];
-    	var _arr2 = []
+    function getWH(bool) {
+        var _arr = [];
+        var _arr2 = []
 
-		$.each($('.imgItem'),function(key,val){
-    		_arr[key] = $(val).find('img').width();
-    		_arr2[key] = $(val).find('img').height();
-    	});
-    	
-    	return bool ? _arr : _arr2;
+        $.each($('.imgItem'), function(key, val) {
+            _arr[key] = $(val).find('img').width();
+            _arr2[key] = $(val).find('img').height();
+        });
+
+        return bool ? _arr : _arr2;
     }
 
     var sHeight = 140; //参考高度
@@ -53,23 +107,23 @@
     var itemsLen = $items.length || 0;
     var border = 10; //边框值
 
-     for (var i = 0; i < itemsLen; i++) {
-     	//参考高度/原始高度 = 变化后的宽度/初始宽度
-     	//获取重置后的宽度和高度
-        widthAry[i] = Math.round(widthAry[i] * (sHeight / heightAry[i])); 
+    for (var i = 0; i < itemsLen; i++) {
+        //参考高度/原始高度 = 变化后的宽度/初始宽度
+        //获取重置后的宽度和高度
+        widthAry[i] = Math.round(widthAry[i] * (sHeight / heightAry[i]));
         heightAry[i] = sHeight;
     }
 
     //$(".row").remove();
     //div.row初始为容器左右padding宽 
-    var rowWidth = 2 * border; 
-    var i = 0;				//container下的item下标
-    var j = 0;				
-    var rowDivs = [];		//行div.row集合
-    var rowSonsLen = [];	//行div.row的item集合
+    var rowWidth = 2 * border;
+    var i = 0; //container下的item下标
+    var j = 0;
+    var rowDivs = []; //行div.row集合
+    var rowSonsLen = []; //行div.row的item集合
 
     while (i < itemsLen) {
-    	//创建div.row
+        //创建div.row
         var rowDiv = $('<div class="row"></div>');
         //设置div.row宽度=浏览器宽度-边框
         rowDiv.width(bWidth - border * 2);
@@ -77,7 +131,7 @@
         rowSonsLen[j] = 0;
 
         for (i; i < itemsLen; i++) {
-        	//往div.row内增加item
+            //往div.row内增加item
             rowDiv.append($items[i]);
             //每次增加item,就更新一次div.row的宽度
             rowWidth += widthAry[i] + 2 * border;
@@ -86,7 +140,7 @@
 
             //判断container容器下的item是否还能加入div.row，且往当前div.row加入item后的宽度是否大于container容器宽度
             if (i + 1 < itemsLen && (rowWidth + widthAry[i + 1] + 2 * border) > bWidth) {
-            	//当上述条件成立，则新建一个div.row
+                //当上述条件成立，则新建一个div.row
                 rowDivs[j++] = rowDiv;
                 //设置div.row初始宽度
                 rowWidth = 2 * border;
@@ -94,7 +148,7 @@
                 //跳出本次循环
                 break;
             } else if (i + 1 == itemsLen) {
-            	//如果i刚好等于items总数
+                //如果i刚好等于items总数
                 rowDivs[j] = rowDiv;
             }
         }
@@ -105,29 +159,99 @@
     //只有1行不做调整
     if (rowDivsLen > 1) {
         //计算调整后差距
-        var rowTotalWidth = 0;
+        var rowTotalWidth;
         var restAry = [];
         var j = 0; //记录宽度数组下标
         var maxLen = 0;
-        var containerWidth = 0;
+        var containerWidth;
         for (var i = 0; i < rowDivsLen; i++) {
+
             var k = j;
+            //计算初始容器container宽度=浏览器宽度-border*2
             containerWidth = bWidth - 2 * border;
+
+            //初始化div.row初始宽度
             rowTotalWidth = 0;
+
+            //将每个div.row行内item数赋值给maxlen
             maxLen += rowSonsLen[i];
+
             for (j; j < maxLen; j++) {
+
                 rowTotalWidth += widthAry[j];
+
                 containerWidth -= 2 * border;
             }
+
+
+            //变化后的高度 = 参考高度 * 浏览器宽度/内有items后div.row的宽度
             var afterHeight = Math.round(parseFloat(sHeight * containerWidth / rowTotalWidth));
+
             heightAry[i] = afterHeight;
+
             restAry[i] = 2 * border;
-            //算出高度列表后再更新宽度列表
+
+            //算出高度列表后再更新宽度列表（必须得先计算变化后的高度，才能调整宽度）
             for (k; k < maxLen; k++) {
+
+                //变化后的宽度 = 初始item宽度 * 变化后高度/参考高度
                 widthAry[k] = Math.round(parseFloat(widthAry[k] * afterHeight / sHeight));
+
                 restAry[i] += widthAry[k] + 2 * border; //调整后宽度
+
             }
         }
+        
+        //调整最后间距
+        var gap = 0; //间距值
+        var acIndex = 0;
+        for (var i = 0; i < rowDivsLen; i++) {
+            gap = bWidth - restAry[i];
+            //小于容器宽度
+            if (gap > 0) {
+                while (gap != 0) {
+                    var j = 0;
+                    widthAry[acIndex + j] = widthAry[acIndex + j] + 1;
+                    gap--;
+                    j = (j + 1 + rowSonsLen[i]) % rowSonsLen[i];
+                }
+            }
+            //大于容器宽度
+            else if (gap < 0) {
+                while (gap != 0) {
+                    var j = 0;
+                    widthAry[acIndex + j] = widthAry[acIndex + j] - 1;
+                    gap++;
+                    j = (j + 1 + rowSonsLen[i]) % rowSonsLen[i];
+                }
+            }
+            acIndex += rowSonsLen[i];
+        };
+    }
+
+    //把宽度和高度列表赋予图片
+    var i = 0,
+        j = 0;
+    $.each($items, function(key, val) {
+        $(this).css({
+            "width": widthAry[key],
+            "height": heightAry[i],
+            "margin": border
+        });
+        var $img = $(this).find("img");
+        $img.css({
+            "width": widthAry[key],
+            "height": heightAry[i]
+        });
+        if (j < rowSonsLen[i] - 1) {
+            j++;
+        } else {
+            i++;
+            j = 0;
+        }
+    });
+    $container.css("padding", "0 " + border + "px");
+    $container.append(rowDivs);
     </script>
 </body>
 
