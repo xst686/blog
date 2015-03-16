@@ -50,7 +50,7 @@
             // 	sHeight = 140;
             // }
             // else if(bWidth <= 2880){
-            // 	sHeight = 140;		
+            // 	sHeight = 140;
             // }
             // else if(bWidth <= 3280){
             // 	sHeight = 140;
@@ -269,7 +269,7 @@
                 tmpDescript = $(this).find(".imgItem-descript");
                 tmpOptWidth = $(this).find(".imgItem-opt").width() + 2 * padding;
                 if (tmpItemWidth < tmpOptWidth) {
-                    //如果图片宽度于小操作宽度先不考虑					
+                    //如果图片宽度于小操作宽度先不考虑
                 } else if (tmpItemWidth - tmpOptWidth < 80) {
                     tmpDescript.addClass("hide");
                 } else {
